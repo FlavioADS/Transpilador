@@ -1,17 +1,19 @@
-class Flamingo {
-    constructor(comer = 'crustáceos', cor = 'Rosa') {
-        this.comer = comer;
-        this.cor = cor;
+//Flávio de Araújo Silva - ADO
+class flamingo {
+    constructor(novoComer) {
+        this.comer = 'crustáceos';
+        this.cor = 'Rosa';
         this.voar = 0;
         this.dormir = 0;
         this.correr = 0;
+        this.comer = novoComer;
     }
-    mudarCor(novaCor) {
+    novaCor(novaCor) {
         this.cor = novaCor;
     }
-    voarParaAcharNinho(voar) {
+    tempodevooparaacharninho(voar) {
         if (voar === undefined) {
-            console.log("Não achei um ninho ;-;");
+            console.log("Não achei um ninho ;-;"); //fiz esses "consoles.logs" para me ajudar a entender oq estava acontecendo
             this.voar += 10;
         }
         else {
@@ -20,7 +22,7 @@ class Flamingo {
         }
         console.log("Tempo de voo: ", this.voar);
     }
-    dormirTempo(dormir) {
+    tempodesono(dormir) {
         if (dormir === undefined) {
             console.log("Não dormi o suficiente, tenho que dormir mais um pouco.");
             this.dormir += 10;
@@ -31,7 +33,7 @@ class Flamingo {
         }
         console.log("Tempo de descanso: ", this.dormir);
     }
-    correrParaCacar(correr) {
+    Cacarcomida(correr) {
         if (correr === undefined) {
             console.log("Não consegui pegar a minha presa");
             this.correr += 10;
@@ -44,10 +46,16 @@ class Flamingo {
     }
 }
 
+const euflamingo = new flamingo('Peixes','cinza');
+const novaCor = euflamingo;
+console.log(novaCor);
 
-const meuFlamingo = new Flamingo('Peixes', 'Cinza');
-meuFlamingo.mudarCor('Vermelho');
-console.log(meuFlamingo.cor)
-meuFlamingo.voarParaAcharNinho();
-meuFlamingo.dormirTempo();
-meuFlamingo.correrParaCacar();
+euflamingo.tempodevooparaacharninho();
+euflamingo.tempodevooparaacharninho(); // aqui eu repeti para testar se estava incrementando 10 como solicitei nos objetos.
+euflamingo.tempodevooparaacharninho(20);
+euflamingo.tempodesono();
+euflamingo.tempodesono();
+euflamingo.tempodesono(50);
+euflamingo.Cacarcomida();
+euflamingo.Cacarcomida();
+euflamingo.Cacarcomida(80);
