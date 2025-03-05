@@ -1,5 +1,3 @@
-//Flávio de Araújo Silva - ADO
-
 class Flamingo {
   comer: string;
   cor: string;
@@ -7,19 +5,23 @@ class Flamingo {
   dormir: number;
   correr: number;
 
-  constructor(comer: string = 'crustáceos', cor: string = 'Rosa') {
-      this.comer = comer;
-      this.cor = cor;
+  constructor(novoComer: string = 'crustáceos', novaCor: string = 'Rosa') {
+      this.comer = novoComer;
+      this.cor = novaCor;
       this.voar = 0;
       this.dormir = 0;
       this.correr = 0;
   }
 
-  mudarCor(novaCor: string) {
+  setComida(novaComida: string): void {
+      this.comer = novaComida;
+  }
+
+  novaCor(novaCor: string): void {
       this.cor = novaCor;
   }
 
-  voarParaAcharNinho(voar?: number) {
+  tempodevooparaacharninho(voar?: number): void {
       if (voar === undefined) {
           console.log("Não achei um ninho ;-;");
           this.voar += 10;
@@ -30,7 +32,7 @@ class Flamingo {
       console.log("Tempo de voo: ", this.voar);
   }
 
-  dormirTempo(dormir?: number) {
+  tempodesono(dormir?: number): void {
       if (dormir === undefined) {
           console.log("Não dormi o suficiente, tenho que dormir mais um pouco.");
           this.dormir += 10;
@@ -41,7 +43,7 @@ class Flamingo {
       console.log("Tempo de descanso: ", this.dormir);
   }
 
-  correrParaCacar(correr?: number) {
+  cacarComida(correr?: number): void {
       if (correr === undefined) {
           console.log("Não consegui pegar a minha presa");
           this.correr += 10;
@@ -53,10 +55,23 @@ class Flamingo {
   }
 }
 
-// Testando a classe
-const meuFlamingo = new Flamingo('Peixes', 'Cinza');
+// Criando um novo flamingo
+const euflamingo = new Flamingo('Peixes', 'Cinza');
 
-meuFlamingo.mudarCor('Vermelho');
-meuFlamingo.voarParaAcharNinho();
-meuFlamingo.dormirTempo();
-meuFlamingo.correrParaCacar();
+// Alterando atributos
+euflamingo.novaCor('Cinza');
+euflamingo.setComida('Peixes');
+
+console.log("Nova cor: " + euflamingo.cor);
+console.log("O que está comendo atualmente?: " + euflamingo.comer);
+
+// Testando os métodos
+euflamingo.tempodevooparaacharninho();
+euflamingo.tempodevooparaacharninho();
+euflamingo.tempodevooparaacharninho(20);
+euflamingo.tempodesono();
+euflamingo.tempodesono();
+euflamingo.tempodesono(50);
+euflamingo.cacarComida();
+euflamingo.cacarComida();
+euflamingo.cacarComida(80);
