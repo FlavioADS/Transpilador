@@ -55,17 +55,17 @@ class Flamingo {
   }
 }
 
-// Criando um novo flamingo
+
 const euflamingo = new Flamingo('Peixes', 'Cinza');
 
-// Alterando atributos
+
 euflamingo.novaCor('Cinza');
 euflamingo.setComida('Peixes');
 
 console.log("Nova cor: " + euflamingo.cor);
 console.log("O que está comendo atualmente?: " + euflamingo.comer);
 
-// Testando os métodos
+
 euflamingo.tempodevooparaacharninho();
 euflamingo.tempodevooparaacharninho();
 euflamingo.tempodevooparaacharninho(20);
