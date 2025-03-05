@@ -53,7 +53,6 @@ class Flamingo {
   }
 }
 
-// Testando a classe
 const meuFlamingo = new Flamingo('Peixes', 'Cinza');
 
 meuFlamingo.mudarCor('Vermelho');
