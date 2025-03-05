@@ -1,19 +1,17 @@
-//Flávio de Araújo Silva - ADO
-class flamingo {
-    constructor(novoComer) {
-        this.comer = 'crustáceos';
-        this.cor = 'Rosa';
+class Flamingo {
+    constructor(comer = 'crustáceos', cor = 'Rosa') {
+        this.comer = comer;
+        this.cor = cor;
         this.voar = 0;
         this.dormir = 0;
         this.correr = 0;
-        this.comer = novoComer;
     }
-    novaCor(novaCor) {
+    mudarCor(novaCor) {
         this.cor = novaCor;
     }
-    tempodevooparaacharninho(voar) {
+    voarParaAcharNinho(voar) {
         if (voar === undefined) {
-            console.log("Não achei um ninho ;-;"); //fiz esses "consoles.logs" para me ajudar a entender oq estava acontecendo
+            console.log("Não achei um ninho ;-;");
             this.voar += 10;
         }
         else {
@@ -22,7 +20,7 @@ class flamingo {
         }
         console.log("Tempo de voo: ", this.voar);
     }
-    tempodesono(dormir) {
+    dormirTempo(dormir) {
         if (dormir === undefined) {
             console.log("Não dormi o suficiente, tenho que dormir mais um pouco.");
             this.dormir += 10;
@@ -33,7 +31,7 @@ class flamingo {
         }
         console.log("Tempo de descanso: ", this.dormir);
     }
-    Cacarcomida(correr) {
+    correrParaCacar(correr) {
         if (correr === undefined) {
             console.log("Não consegui pegar a minha presa");
             this.correr += 10;
@@ -45,17 +43,10 @@ class flamingo {
         console.log("Tempo de corrida: ", this.correr);
     }
 }
-
-const euflamingo = new flamingo('Peixes','cinza');
-const novaCor = euflamingo;
-console.log(novaCor);
-
-euflamingo.tempodevooparaacharninho();
-euflamingo.tempodevooparaacharninho(); // aqui eu repeti para testar se estava incrementando 10 como solicitei nos objetos.
-euflamingo.tempodevooparaacharninho(20);
-euflamingo.tempodesono();
-euflamingo.tempodesono();
-euflamingo.tempodesono(50);
-euflamingo.Cacarcomida();
-euflamingo.Cacarcomida();
-euflamingo.Cacarcomida(80);
+// Testando a classe
+const meuFlamingo = new Flamingo('Peixes', 'Cinza');
+meuFlamingo.mudarCor('Vermelho');
+console.log(meuFlamingo.cor)
+meuFlamingo.voarParaAcharNinho();
+meuFlamingo.dormirTempo();
+meuFlamingo.correrParaCacar();
