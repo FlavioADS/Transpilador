@@ -43,7 +43,8 @@ class Flamingo {
         console.log("Tempo de corrida: ", this.correr);
     }
 }
-// Testando a classe
+
+
 const meuFlamingo = new Flamingo('Peixes', 'Cinza');
 meuFlamingo.mudarCor('Vermelho');
 console.log(meuFlamingo.cor)
